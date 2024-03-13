@@ -1,0 +1,68 @@
+*{ 
+    box-sizing: border-box; 
+    font-family: 'Ubuntu Mono', monospace;
+  }
+  body {
+    background: #121212;
+  }
+  .container {
+    max-width: 275px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: #353535ef;
+    box-shadow: 0 0 8px 2px #ffffff44;
+    padding: 6px;
+    border-radius: .25em;
+    .displayContainer {
+      width: 100%;
+      padding: 4px 18px 18px 18px;
+      text-align: right;
+      background-color: #f5f5f5;
+      border-radius: .25em;
+      margin-bottom: 4px;
+      box-shadow: 2px -2px 3px #212121aa inset;
+      
+      #prev {
+        color: #666;
+        font-size: 16px;
+      }
+      #display {
+        font-size: 24px;      
+      }
+    }
+    .row {
+      display: flex;
+      flex-flow: row wrap;
+      div {
+        flex: 0 1 calc(25% - 4px);
+        max-width: 25%;
+        background-color: #f5f5f5;
+        box-shadow: -2px 2px 3px #212121aa inset;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        border-radius: .25em;
+        margin: 2px;
+        &[id] {
+          cursor: pointer;
+        }
+        &#equals {
+          background-color: cornflowerblue;
+        }
+        &#clear {
+          background-color: palevioletred;
+        }
+        &#backspace:before {
+          content: '\21E4';
+        }
+        &:not([id]) {
+          background: transparent;
+          box-shadow: none;
+          background-color: #212121;
+          box-shadow: -2px 2px 3px #454545aa inset;
+        }
+      }
+    }
+  }
